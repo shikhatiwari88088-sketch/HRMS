@@ -1,0 +1,6 @@
+venv/
+hrms_backend/venv/
+hrms-frontend/node_modules/
+__pycache__/
+*.pyc
+.env
