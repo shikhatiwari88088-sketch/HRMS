@@ -4,3 +4,5 @@ hrms-frontend/node_modules/
 __pycache__/
 *.pyc
 .env
+.idea/
+node_modules/
