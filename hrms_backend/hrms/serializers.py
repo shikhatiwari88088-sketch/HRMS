@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import Employee, Attendance
 
 
-# ✅ ADD THIS
 class EmployeeSerializer(serializers.ModelSerializer):
 
     def validate_employee_id(self, value):
@@ -15,7 +14,6 @@ class EmployeeSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# Existing AttendanceSerializer
 class AttendanceSerializer(serializers.ModelSerializer):
     employee_id = serializers.CharField(write_only=True)
     employee_name = serializers.CharField(
