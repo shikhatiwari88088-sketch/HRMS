@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+a:hover {
+  color: black;
+}
+
+a.active {
+  color: white;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 4px;
+}
+

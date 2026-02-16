@@ -26,19 +26,69 @@ function Dashboard() {
     fetchStats();
   }, []);
 
-  if (loading) return <p style={{ padding: "2rem" }}>Loading...</p>;
+  if (loading)
+    return (
+      <div style={styles.loadingContainer}>
+        <div style={styles.loader}></div>
+      </div>
+    );
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Dashboard</h2>
+    <div style={styles.container}>
+      <h2 style={styles.heading}>Dashboard Overview</h2>
 
-      <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-        <Card title="Total Employees" value={stats.total_employees} />
-        <Card title="Present Today" value={stats.present_today} />
-        <Card title="Absent Today" value={stats.absent_today} />
+      <div style={styles.cardWrapper}>
+        <Card
+          title="Total Employees"
+          value={stats.total_employees}
+          color="#3b82f6"
+        />
+        <Card
+          title="Present Today"
+          value={stats.present_today}
+          color="#22c55e"
+        />
+        <Card
+          title="Absent Today"
+          value={stats.absent_today}
+          color="#ef4444"
+        />
       </div>
     </div>
   );
 }
+
+const styles = {
+  container: {
+    padding: "2.5rem",
+    background: "#f8fafc",
+    minHeight: "100vh",
+  },
+  heading: {
+    fontSize: "26px",
+    fontWeight: "600",
+    marginBottom: "25px",
+    color: "#0f172a",
+  },
+  cardWrapper: {
+    display: "flex",
+    gap: "25px",
+    flexWrap: "wrap",
+  },
+  loadingContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "80vh",
+  },
+  loader: {
+    width: "40px",
+    height: "40px",
+    border: "5px solid #e2e8f0",
+    borderTop: "5px solid #3b82f6",
+    borderRadius: "50%",
+    animation: "spin 1s linear infinite",
+  },
+};
 
 export default Dashboard;
